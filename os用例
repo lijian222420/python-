@@ -1,0 +1,38 @@
+# os库的用例
+import os
+# 获取当前工作目录
+cwd = os.getcwd ()
+print("当前工作目录:", cwd)
+# 改变当前工作目录到指定路径
+os.chdir ("/home/user/Desktop")
+print("新的工作目录:", os.getcwd ())
+# 在系统shell中运行指定命令
+os.system ("ls -l")
+# 返回指定路径下的文件和目录列表
+files = os.listdir ("/home/user/Desktop")
+print("文件和目录列表:", files)
+# 将多个路径组合成一个路径
+path = os.path.join ("/home/user", "Desktop", "test.txt")
+print("组合后的路径:", path)
+# 将路径分割成目录和文件名两部分
+dirname, filename = os.path.split (path)
+print("目录名:", dirname)
+print("文件名:", filename)
+# 判断路径是否存在
+print("路径是否存在:", os.path.exists (path))
+# 判断路径是否是一个文件
+print("路径是否是一个文件:", os.path.isfile (path))
+# 判断路径是否是一个目录
+print("路径是否是一个目录:", os.path.isdir (path))
+# 返回路径对应的文件或目录的大小（字节）
+print("文件或目录的大小（字节）:", os.path.getsize (path))
+# 返回路径对应的文件或目录的最后修改时间（秒）
+print("最后修改时间（秒）:", os.path.getmtime (path))
+# 重命名文件或目录
+os.rename ("test.txt", "new_test.txt")
+# 删除文件
+os.remove ("new_test.txt")
+# 删除空目录
+os.rmdir ("empty_dir")
+# 创建目录
+os.mkdir ("new_dir")
